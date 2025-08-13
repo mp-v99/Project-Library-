@@ -68,9 +68,29 @@ button {
     background-color: var(--background-color);
 
     display: grid;
-    grid-template-columns: 10fr 90fr;
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: 20fr 80fr;
+    grid-template-rows: 10fr 45fr 45fr;
 }
 
+.header {
+    border: 3px solid green;
+
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.sidebar {
+    border: 3px solid orange;
+
+    grid-column: 1 / 2;
+    grid-row: 1 / 4; 
+}
+
+.main_content {
+    border: 3px solid purple;
+
+    grid-column: 2 / 3;
+    grid-row: 2 / 4;
+}
 
 
