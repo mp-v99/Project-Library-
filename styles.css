@@ -1,39 +1,53 @@
 /* use a more-intuitive box-sizing model */
 
+:root {
+    --background-color: rgb(86, 86, 86);
+    --text-color: #efefef;
+    --text-font: Arial, Helvetica, sans-serif;
+}
+
 *, *::before, *::after {
- box-sizing: border-box;
+    box-sizing: border-box;
 }
 
 /*  remove default margin */
 * {
- margin: 0;
+    margin: 0;
 }
 
 body {
- /* add accessible line-height */
- line-height: 1.5;
- /* improve text rendering */
- -webkit-font-smoothing: antialiased;
+    /* add accessible line-height */
+    line-height: 1.5;
+    /* improve text rendering */
+    -webkit-font-smoothing: antialiased;
+
+    height: 100vh;
+    width: 100vw;
+
+    display: flex;
+
+    font-family: var(--text-font);
+    color: var(--text-color);
 }
 /* improve media defaults */
 img, picture, video, canvas, svg {
- display: block;
- max-width: 100%;
+    display: block;
+    max-width: 100%;
 }
 /* inherit fonts for form controls */
 input, button, textarea, select {
- font: inherit;
+    font: inherit;
 }
 /* avoid text overflows */
 p, h1, h2, h3, h4, h5, h6 {
- overflow-wrap: break-word;
+    overflow-wrap: break-word;
 }
 /* improve line wrapping */
 p {
- text-wrap: pretty;
+    text-wrap: pretty;
 }
 h1, h2, h3, h4, h5, h6 {
- text-wrap: balance;
+    text-wrap: balance;
 }
 
 /* off_the_button_styles */
@@ -44,9 +58,19 @@ button {
     padding: 0;
     cursor: pointer;
   }
-  
-  
 
+
+  
+  
+#app {
+    flex: auto;
+
+    background-color: var(--background-color);
+
+    display: grid;
+    grid-template-columns: 10fr 90fr;
+    grid-template-rows: repeat(3, 1fr);
+}
 
 
 
