@@ -77,6 +77,12 @@ button {
 
     grid-column: 2 / 3;
     grid-row: 1 / 2;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding-left: 0.5%;
 }
 
 .sidebar {
@@ -84,6 +90,9 @@ button {
 
     grid-column: 1 / 2;
     grid-row: 1 / 4; 
+
+    display: grid;
+    grid-template-rows: 10fr 90fr;
 }
 
 .main_content {
@@ -91,6 +100,10 @@ button {
 
     grid-column: 2 / 3;
     grid-row: 2 / 4;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-rows: repeat(auto-fill, minmax(350px, 1fr));
 }
 
 
