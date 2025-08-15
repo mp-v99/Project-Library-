@@ -10,25 +10,30 @@
 <body>
     <div id="app">
         <div class="header">
-            <h1>The Max Pons Library</h1>
+            <h1>The Library</h1>
         </div>
         <div class="sidebar">
             <div class="add_book_button">
-                <button type="button">Add book +</button>
+                <h2>Add book +</h2>
             </div>
             <form class="add_book_form" action="url-example.com" method="post">
-                <label for="title">Title</label>
+                <label for="title"><p>Title</p></label>
                 <input type="text" id="title" name="book_title">
-                <label for="author">Author</label>
+                <label for="author"><p>Author</p></label>
                 <input type="text" id="author" name="book_author">
-                <label for="pages">Number of pages</label>
-                <input type="number" id="pages" name="number_of_pages">
-                <label for="read_status">Read?</label>
-                <input type="checkbox" id="read_status" name="read_status" value="read">
+                <label for="pages"><p># of pages</p></label>
+                <input type="number" id="pages" name="number_of_pages" >
+                <label for="read_status"><p>Read?</p></label>
+                <input type="checkbox" id="read_status" name="read_status" value="read" checked>
+
+                <button type="submit">Add</button>
             </form>
+            <div id="sidebar_footer">
+                <h4>Visit this repo on <a href="https://github.com/mp-v99/Project-Library-">Github</a></h4>
+            </div>
         </div>
         <div class="main_content">
-            <div class="card"> card 1   </div>
+            <div class="card">card 1</div>
             <div class="card">card 2</div>
             <div class="card">card 3</div>
             <div class="card">card 4</div>
@@ -38,6 +43,11 @@
             <div class="card">card 8</div>
             <div class="card">card 9</div>
             <div class="card">card 10</div>
+            <div class="card">card 11</div>
+            <div class="card">card 12</div>
+            <div class="card">card 13</div>
+            <div class="card">card 14</div>
+            <div class="card">card 15</div>
         </div>
     </div>
 </body>
