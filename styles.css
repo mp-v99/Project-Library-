@@ -1,11 +1,12 @@
 /* use a more-intuitive box-sizing model */
 
 :root {
-    --secondary-color: rgb(86, 86, 86);
+    --dominant-color: rgb(86, 86, 86);
 
-    --main-color: #cdcdcd;
-    --header-bg-color: #5B7FA3;
+    --secondary-color: #efefef;
+    --theme-color: #5B7FA3;
     --text-font: Arial, Helvetica, sans-serif;
+    --big-text-size: 1.1rem;
     --regular-text-size: 0.8rem;
     --small-text-size: 0.1rem;
 
@@ -33,7 +34,7 @@ body {
     display: flex;
 
     font-family: var(--text-font);
-    color: var(--main-color);
+    color: var(--secondary-color);
 
 }
 /* improve media defaults */
@@ -66,7 +67,11 @@ button {
     cursor: pointer;
   }
 
+html *::-webkit-scrollbar {
+    display: none;
+  }
 
+/* Dashboard Container: */
   
   
 #app {
@@ -76,9 +81,7 @@ button {
     grid-template-columns: 20fr 80fr;
     grid-template-rows: 10fr 45fr 45fr;
 
-    overflow: hidden;
-
-    background-color: var(--main-color);
+    background-color: var(--secondary-color);
 
     width: 100%;
     height: 100%;
@@ -86,8 +89,10 @@ button {
     overflow-x: auto;
 }
 
+/* Header: */
+
 .header {
-    grid-column: 2 / 3;
+    grid-column: 1 / 3;
     grid-row: 1 / 2;
 
     display: flex;
@@ -96,65 +101,43 @@ button {
 
     padding-left: 0.5%;
 
-    background-color: var(--header-bg-color);
-    color: var(--main-color);
+    background-color: var(--theme-color);
+    color: var(--secondary-color);
 
-    box-shadow: 0px 1px 5px 0px var(--shadow-color);
+    box-shadow: 0px 1px 1px 0px var(--theme-color);
 }
+
 
 /* The sidebar */
 
 
 .sidebar {
     grid-column: 1 / 2;
-    grid-row: 1 / 4; 
+    grid-row: 2 / 4; 
 
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 10fr 30fr 30fr 30fr;
 
-    background-color: var(--secondary-color);
+    background-color: var(--dominant-color);
 
     min-width: 308px;
 }
 
 .sidebar > :is(div, form) {
     font-size: var(--regular-text-size);
-    color: var(--main-color);
+    color: var(--secondary-color);
 }
 
-.sidebar> .add_book_button {
+.sidebar> .add_book_header {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
 
     grid-column: 1 / 3;
     grid-row: 1 / 2;
-}
 
-.add_book_button>button {
-    border: solid 0.5px var(--shadow-color);
-
-    width: 50%;
-    height: 45%;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-
-    border-radius: 0.5rem;
-
-    color: var(--main-color);
-}
-
-.add_book_button>button:hover {
-    border-left: solid 0.5px var(--main-color);
-    border-right: solid 0.5px var(--main-color);
-}
-
-.add_book_button>button:active {
-    scale: 0.99;
+    padding-bottom: 2.5%;
 }
 
 .sidebar > form {
@@ -195,14 +178,14 @@ form>input {
     outline: none;
     border: none;
 
-    background-color: var(--main-color);
-    color: var(--secondary-color);
+    background-color: var(--secondary-color);
+    color: var(--dominant-color);
 
     grid-column: 2 / 4;
 }
 
 form>#read_status {
-    accent-color: var(--header-bg-color);
+    accent-color: var(--theme-color);
 
     height: 20px;
     width: 20px;
@@ -223,15 +206,16 @@ form>button {
 
     border-radius: 0.5rem;
 
-    color: var(--main-color);
+    color: var(--secondary-color);
+    font-weight: bold;
 
     grid-column: span 3;
     grid-row: 5 / 6;
 }
 
 form>button:hover {
-    border-left: solid 0.5px var(--main-color);
-    border-right: solid 0.5px var(--main-color);
+    border-left: solid 0.5px var(--secondary-color);
+    border-right: solid 0.5px var(--secondary-color);
 }
 
 form>button:active {
@@ -247,8 +231,19 @@ form>button:active {
     justify-content: center;
 
     padding-bottom: 1rem;
+
+    font-size: var(--regular-text-size);
 }
 
+#sidebar_footer a {
+    color: var(--theme-color);
+
+    text-decoration: none;
+}
+
+#sidebar_footer a:visited {
+    text-decoration: none;
+}
 /* The main content */
 
 
@@ -257,31 +252,163 @@ form>button:active {
     grid-row: 2 / 4;
 
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-auto-rows: minmax(300px, 350px);
+    grid-template-columns: repeat(auto-fill, minmax(401px, 1fr));
+    grid-auto-rows: minmax(440px, 501px);
     gap: 30px;
-   
 
-    overflow: auto;
-
-    min-width: 800px;
+    min-width: 500px;
     min-height: 800px;
 
     padding: 30px;
 
-   
-    color: var(--secondary-color);
+    color: var(--dominant-color);
+
+    overflow-y: auto;
 }
 
 .main_content>.card {
-    border: 1px solid var(--secondary-color);
+    box-shadow: 3px 4px 2px 0px var(--theme-color);
     border-radius: 1rem;
 
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+
+    padding: 1rem;
+
+    background-color: var(--dominant-color);
+    color: var(--secondary-color);
+}
+
+.card>div {
     display: flex;
     align-items: center;
     justify-content: center;
+
+    font-weight: bold;
 }
 
+.card>.title {
+    font-size: var(--big-text-size);
+}
+
+.card>.author,
+.card>.pages,
+.card>.read_toggle {
+    font-size: var(--regular-text-size);
+}
+
+/* Toggle button behavior. Customized checkbox courtesy of: https://www.themedevhub.com/tools/css-switch-collection  */
+
+.read_toggle .tgl {
+  display: none;
+}
+
+.read_toggle,
+.read_toggle *,
+.read_toggle *:after,
+.read_toggle *:before {
+  box-sizing: border-box;
+}
+
+.read_toggle .tgl::selection,
+.read_toggle .tgl:after::selection,
+.read_toggle .tgl:before::selection,
+.read_toggle .tgl *::selection,
+.read_toggle .tgl *:after::selection,
+.read_toggle .tgl *:before::selection,
+.read_toggle .tgl + .tgl_btn::selection {
+  background: none;
+}
+
+.read_toggle .tgl + .tgl_btn {
+  outline: 0;
+  display: block;
+  width: 4.5rem;
+  height: 2rem;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+}
+
+.read_toggle .tgl + .tgl_btn:after,
+.read_toggle .tgl + .tgl_btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+
+.read_toggle .tgl + .tgl_btn:after {
+  left: 0;
+}
+
+.read_toggle .tgl + .tgl_btn:before {
+  display: none;
+}
+
+.read_toggle .tgl:checked + .tgl_btn:after {
+  left: 50%;
+}
+
+.read_toggle .tgl-flip + .tgl_btn {
+  padding: 2px;
+  transition: all 0.2s ease;
+  font-family: sans-serif;
+  perspective: 100px;
+}
+
+.read_toggle .tgl-flip + .tgl_btn:after,
+.read_toggle .tgl-flip + .tgl_btn:before {
+  transition: all 0.4s ease;
+  width: 100%;
+  position: absolute;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  border-radius: 4px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.read_toggle .tgl-flip + .tgl_btn:after {
+  content: attr(data-tg-on);
+  background: var(--theme-color);
+  transform: rotateY(-180deg);
+}
+
+.read_toggle .tgl-flip + .tgl_btn:before {
+  border: 1px solid var(--secondary-color);
+    
+  background: var(--dominant-color);
+  color: var(--secondary-color);
+
+  content: attr(data-tg-off);
+}
+
+.read_toggle .tgl-flip + .tgl_btn:active:before {
+  transform: rotateY(-20deg);
+}
+
+.read_toggle .tgl-flip:checked + .tgl_btn:before {
+  transform: rotateY(180deg);
+}
+
+.read_toggle .tgl-flip:checked + .tgl_btn:after {
+  transform: rotateY(0);
+  left: 0;
+
+  background: var(--theme-color);
+}
+
+.read_toggle .tgl-flip:checked + .tgl_btn:active:after {
+  transform: rotateY(20deg);
+}
 
 
 
