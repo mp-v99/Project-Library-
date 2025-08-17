@@ -18,11 +18,11 @@
             </div>
             <form class="add_book_form" action="url-example.com" method="post">
                 <label for="title"><p>Title</p></label>
-                <input type="text" id="title" name="book_title" maxlength="30">
+                <input type="text" id="title" name="book_title" maxlength="30" required>
                 <label for="author"><p>Author</p></label>
-                <input type="text" id="author" name="book_author" maxlength="20">
+                <input type="text" id="author" name="book_author" maxlength="20" required>
                 <label for="pages"><p># of pages</p></label>
-                <input type="number" id="pages" name="number_of_pages" max="999">
+                <input type="number" id="pages" name="number_of_pages" max="999" required>
                 <label for="read_status"><p>Read?</p></label>
                 <input type="checkbox" id="read_status" name="read_status" value="read" checked>
 
@@ -30,26 +30,6 @@
             </form>
             <div id="sidebar_footer">
                 <h4>Visit this repo on <a href="https://github.com/mp-v99/Project-Library-">Github</a></h4>
-            </div>
-        </div>
-        <div class="main_content">
-            <div class="card">
-                <div class="title">
-                    <p>The Three-Body Problem<p>
-                </div>
-                <div class="author">
-                    <p>By: Liu Cixin (刘慈欣)</p>
-                </div>
-                <div class="pages">
-                    <p>416 pages</p>
-                </div>
-                <div class="read_toggle">
-                    <input type="checkbox" class="tgl tgl-flip" id="switch_yes_no" checked/>
-                    <label for="switch_yes_no" class="tgl_btn" data-tg-on="Read ✔" data-tg-off="Reading..."></label>
-                </div>
-                <div class="delete_button">
-                    <button type="button" id="delete_btn">✖</button>
-                </div>
             </div>
         </div>
     </div>
