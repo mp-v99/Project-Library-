@@ -1,4 +1,4 @@
-/* use a more-intuitive box-sizing model */
+/* Define custom properties for better styling control */
 
 :root {
     --dominant-color: rgb(86, 86, 86);
@@ -12,6 +12,9 @@
 
     --shadow-color: rgb(66, 66, 66);
 }
+
+/* use a more-intuitive box-sizing model */
+
 
 *, *::before, *::after {
     box-sizing: border-box;
