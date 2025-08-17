@@ -1,5 +1,12 @@
 const myLibrary = [];
 
+const bookInputTitle = document.querySelector('#title');
+const bookInputAuthor = document.querySelector('#author');
+const bookInputPages = document.querySelector('#pages');
+const bookInputRead = document.querySelector('#read_status');
+
+const bookSubmitButton = document.querySelector('submit_button');
+
 function Book(title, author, pages, toggleRead,) {
 
     this.id = crypto.randomUUID();
