@@ -5,7 +5,7 @@ const bookInputAuthor = document.querySelector('#author');
 const bookInputPages = document.querySelector('#pages');
 const bookInputRead = document.querySelector('#read_status');
 
-const bookSubmitButton = document.querySelector('submit_button');
+const bookSubmitButton = document.querySelector('#submit_button');
 
 function Book(title, author, pages, toggleRead,) {
 
@@ -28,3 +28,9 @@ function Book(title, author, pages, toggleRead,) {
 	
 }
 
+
+bookSubmitButton.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    alert("This should be working now!")
+})
