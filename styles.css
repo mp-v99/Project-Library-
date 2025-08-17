@@ -425,14 +425,14 @@ form>button:active {
     height: 1.5rem;
 }
 
-#delete_btn {
+.delete_button>button[type="button"] {
     flex: auto;
     
     opacity: 0;
     pointer-events: none;
 }
 
-.card:hover #delete_btn {
+.card:hover button[type="button"] {
     opacity: 1;
     transition: opacity 1s ease-in-out;
 
