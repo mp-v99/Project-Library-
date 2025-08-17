@@ -6,14 +6,14 @@ const bookInputPages = document.querySelector('#pages');
 const bookInputRead = document.querySelector('#read_status');
 
 const bookSubmitButton = document.querySelector('#submit_button');
-
-function Book(title, author, pages, toggleRead,) {
+// , author, pages, toggleRead
+function Book(title) {
 
     this.id = crypto.randomUUID();
 	this.title = title;
-	this.author = author;
-	this.pages = pages;
-	this.toggleRead = toggleRead;
+	// this.author = author;
+	// this.pages = pages;
+	// this.toggleRead = toggleRead;
 	this.bookInfo = function() {
 		return(
 			`
@@ -27,10 +27,15 @@ function Book(title, author, pages, toggleRead,) {
 	}
 	
 }
+// , author, pages, toggleRead
+const createBook = function(title) { 
+    const newBook = new Book(title)
+    myLibrary.push(newBook);
+}
 
 
-bookSubmitButton.addEventListener('submit', (e) => {
+bookSubmitButton.addEventListener('click', (e) => {
     e.preventDefault();
-
-    alert("This should be working now!")
+    createBook(bookInputTitle.value);
+    console.log(myLibrary[0])
 })
