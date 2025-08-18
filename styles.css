@@ -11,7 +11,8 @@
     --regular-text-size: 0.8rem;
     --small-text-size: 0.1rem;
 
-    --shadow-color: rgb(66, 66, 66);
+    --dominant-shadow-color: #7b563b;
+    --theme-shadow-color: #1f82a2;
 }
 
 /* use a more-intuitive box-sizing model */
@@ -126,6 +127,11 @@ html *::-webkit-scrollbar {
     background-color: var(--dominant-color);
 
     min-width: 308px;
+
+    border-top: 0.2rem solid var(--dominant-shadow-color);
+    border-right: 0.2rem solid var(--dominant-shadow-color);
+
+    border-radius: 0px 50px 0px 100px;
 }
 
 .sidebar > :is(div, form) {
@@ -189,7 +195,7 @@ form>input {
 }
 
 form>#read_status {
-    accent-color: var(--theme-color);
+    accent-color: var(--dominant-shadow-color);
 
     height: 20px;
     width: 20px;
@@ -198,7 +204,7 @@ form>#read_status {
 }
 
 form>button {
-    border: solid 0.5px var(--shadow-color);
+    border: solid 0.5px var(--secondary-color);
 
     display: flex;
     align-items: center;
@@ -218,8 +224,8 @@ form>button {
 }
 
 form>button:hover {
-    border-left: solid 0.5px var(--secondary-color);
-    border-right: solid 0.5px var(--secondary-color);
+  border: solid 0.5px var(--dominant-shadow-color);
+  background-color: var(--dominant-shadow-color);
 }
 
 form>button:active {
