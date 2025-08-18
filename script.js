@@ -125,12 +125,26 @@ const displayBook = function(newBook) {
 
 }
 
+let createMultipleBooks = [
+    { title: "The Three-Body Problem", author: "Liu Cixin (刘慈欣)", pages: "416", read: false},
+    { title: "Harry Potter and the Prisoner of Azkaban", author: "J.K. Rowling", pages: "435", read: false},
+    { title: "The Fellowship of the Ring", author: "J.R.R. Tolkien", pages: "423", read: true},
+    { title: "The Name of the Wind", author: "Patrick Rothfuss", pages: "662", read: false},
+    { title: "Mistborn: The Final Empire", author: "Brandon Sanderson", pages: "541", read: false},
+    { title: "A Game of Thrones", author: "George R.R. Martin", pages: "694", read: true},
+    { title: "Dune", author: "Frank Herbert", pages: "688", read: false},
+    { title: "Neuromancer", author: "William Gibson", pages: "271", read: true},
+    { title: "Foundation", author: "Isaac Asimov", pages: "255", read: false},
+    { title: "Hyperion", author: "Dan Simmons", pages: "482", read: true},
+    { title: "Snow Crash", author: "Neal Stephenson", pages: "440", read: true }
 
-for (let i = 0; i<7; i++) {
-    createBook("The Three-Body Problem", "Liu Cixin (刘慈欣)", "416");
+]
+
+createMultipleBooks.forEach((book) => {
+    createBook(book.title, book.author, book.pages, book.read)
     displayBook(myLibrary[0])
-}
-
+})
+    
 console.log(myLibrary)
 
 // The one event needed to grab the input values 
@@ -146,24 +160,7 @@ bookSubmitButton.addEventListener('click', (e) => {
     libraryForm.reset();
 });
 
-{/* <div class="card">
-<div class="title">
-    <p>The Three-Body Problem<p>
-</div>
-<div class="author">
-    <p>By: Liu Cixin (刘慈欣)</p>
-</div>
-<div class="pages">
-    <p>416 pages</p>
-</div>
-<div class="read_toggle">
-    <input type="checkbox" class="tgl tgl-flip" id="switch_yes_no" checked/>
-    <label for="switch_yes_no" class="tgl_btn" data-tg-on="Read ✔" data-tg-off="Reading..."></label>
-</div>
-<div class="delete_button">
-    <button type="button" id="delete_btn">✖</button>
-</div>
-</div>  */}
+
 
 
 
