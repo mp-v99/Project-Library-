@@ -19,10 +19,6 @@ const bookInputRead = document.querySelector('#read_status');
 
 const bookSubmitButton = document.querySelector('#submit_button');
 
-// The toggle inputs counter:
-
-let counter = 0;
-
 // The Book function constructor:
 
 function Book(title, author, pages, toggleRead) {
@@ -78,15 +74,13 @@ const displayBook = function(newBook) {
 
     // Read Toggle Div
 
-    counter++;
-
     const newToggleDiv = document.createElement('div');
     newToggleDiv.className = "read_toggle";
 
     const inputToggle = document.createElement('input');
     inputToggle.type = "checkbox";
     inputToggle.className = "tgl tgl-flip";
-    inputToggle.id = `switch_yes_no${counter}`;
+    inputToggle.id = `switch_yes_no_${newBook.id}`;
     inputToggle.checked = newBook.toggleRead;
 
     const labelToggle = document.createElement('label');
@@ -119,6 +113,8 @@ const displayBook = function(newBook) {
     newToggleDiv.appendChild(labelToggle);
 
     newDeleteDiv.appendChild(newDeleteButton);
+
+    console.log(inputToggle.id)
 }
 
 // The one event needed to grab the input values 
@@ -131,9 +127,10 @@ bookSubmitButton.addEventListener('click', (e) => {
         displayBook(myLibrary[0])
     }
 
-    console.log(myLibrary)
-
     libraryForm.reset();
 })
+
+
+
 
 
