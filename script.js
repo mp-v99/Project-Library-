@@ -114,7 +114,14 @@ const displayBook = function(newBook) {
 
     newDeleteDiv.appendChild(newDeleteButton);
 
-    console.log(inputToggle.id)
+    // Buttons Listeners:
+
+    newDeleteButton.addEventListener("click", () => {
+        myLibrary.pop(inputToggle.id)
+        libraryMainContent.removeChild(newBookDiv)
+        console.log(myLibrary)
+    })
+
 }
 
 // The one event needed to grab the input values 
@@ -126,7 +133,7 @@ bookSubmitButton.addEventListener('click', (e) => {
         createBook(bookInputTitle.value, bookInputAuthor.value, bookInputPages.value, bookInputRead.checked);
         displayBook(myLibrary[0])
     }
-
+    console.log(myLibrary)
     libraryForm.reset();
 })
 
