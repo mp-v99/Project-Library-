@@ -1,10 +1,11 @@
 /* Define custom properties for better styling control */
 
 :root {
-    --dominant-color: rgb(86, 86, 86);
+    --dominant-color: #ae7a52;
 
-    --secondary-color: #efefef;
-    --theme-color: #5B7FA3;
+    --secondary-color: #f9f9f9;
+    --theme-color: #40c6ec;
+    --complementary-color: #f38a84;
     --text-font: Arial, Helvetica, sans-serif;
     --big-text-size: 1.1rem;
     --regular-text-size: 0.8rem;
@@ -270,13 +271,16 @@ form>button:active {
 }
 
 .main_content>.card {
+    border-top: 0.2rem solid var(--complementary-color);
+    border-left: 0.5rem solid var(--complementary-color);
     box-shadow: 3px 4px 2px 0px var(--theme-color);
     border-radius: 1rem;
 
     display: grid;
     grid-template-rows: repeat(4, 1fr);
 
-    padding: 1rem;
+    padding-left: 0.5rem;
+    padding-right: 1rem;
 
     background-color: var(--dominant-color);
     color: var(--secondary-color);
@@ -294,6 +298,8 @@ form>button:active {
 
 .card>.title {
     font-size: var(--big-text-size);
+    color: var(--secondary-color);
+    text-shadow: 1px 0px 2px var(--complementary-color);
 }
 
 .card>.author,
@@ -439,8 +445,7 @@ form>button:active {
     opacity: 1;
     transition: opacity 1s ease-in-out;
 
-
-    background-color: #bd6969;
+    background-color: var(--complementary-color);
     color: var(--secondary-color);
     pointer-events: auto;
 
