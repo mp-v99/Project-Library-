@@ -2,6 +2,10 @@
 
 const myLibrary = [];
 
+// The book form
+
+const libraryForm = document.querySelector('.add_book_form');
+
 // The book cards content:
 
 const libraryMainContent = document.querySelector('.main_content');
@@ -44,11 +48,11 @@ function Book(title, author, pages, toggleRead) {
 
 const createBook = function(title, author, pages, toggleRead) { 
     const newBook = new Book(title, author, pages, toggleRead);
-
-    myLibrary.unshift(newBook);
+    myLibrary.unshift(newBook)
 }
 
 const displayBook = function(newBook) {
+
     // Card Div
     const newBookDiv = document.createElement('div');
     newBookDiv.className = "card";
@@ -121,26 +125,15 @@ const displayBook = function(newBook) {
 
 bookSubmitButton.addEventListener('click', (e) => {
     e.preventDefault();
-    createBook(bookInputTitle.value, bookInputAuthor.value, bookInputPages.value, bookInputRead.checked);
-    displayBook(myLibrary[0])
+
+    if (bookInputTitle.value && bookInputAuthor.value && bookInputPages.value) {
+        createBook(bookInputTitle.value, bookInputAuthor.value, bookInputPages.value, bookInputRead.checked);
+        displayBook(myLibrary[0])
+    }
+
+    console.log(myLibrary)
+
+    libraryForm.reset();
 })
 
 
-/* <div class="card">
-<div class="title">
-    <p>The Three-Body Problem<p>
-</div>
-<div class="author">
-    <p>By: Liu Cixin (刘慈欣)</p>
-</div>
-<div class="pages">
-    <p>416 pages</p>
-</div>
-<div class="read_toggle">
-    <input type="checkbox" class="tgl tgl-flip" id="switch_yes_no" checked/>
-    <label for="switch_yes_no" class="tgl_btn" data-tg-on="Read ✔" data-tg-off="Reading..."></label>
-</div>
-<div class="delete_button">
-    <button type="button" id="delete_btn">✖</button>
-</div>
-</div> */
