@@ -80,7 +80,7 @@ const displayBook = function(newBook) {
     const inputToggle = document.createElement('input');
     inputToggle.type = "checkbox";
     inputToggle.className = "tgl tgl-flip";
-    inputToggle.id = `switch_yes_no_${newBook.id}`;
+    inputToggle.id = `${newBook.id}`;
     inputToggle.checked = newBook.toggleRead;
 
     const labelToggle = document.createElement('label');
@@ -117,12 +117,21 @@ const displayBook = function(newBook) {
     // Buttons Listeners:
 
     newDeleteButton.addEventListener("click", () => {
-        myLibrary.pop(inputToggle.id)
+        const targetIndex = myLibrary.findIndex(item => item.id === newBook.id);
+        myLibrary.splice(targetIndex, 1)
         libraryMainContent.removeChild(newBookDiv)
         console.log(myLibrary)
     })
 
 }
+
+
+for (let i = 0; i<7; i++) {
+    createBook("The Three-Body Problem", "Liu Cixin (刘慈欣)", "416");
+    displayBook(myLibrary[0])
+}
+
+console.log(myLibrary)
 
 // The one event needed to grab the input values 
 
@@ -131,12 +140,30 @@ bookSubmitButton.addEventListener('click', (e) => {
 
     if (bookInputTitle.value && bookInputAuthor.value && bookInputPages.value) {
         createBook(bookInputTitle.value, bookInputAuthor.value, bookInputPages.value, bookInputRead.checked);
-        displayBook(myLibrary[0])
+        displayBook(myLibrary[0]);
     }
-    console.log(myLibrary)
-    libraryForm.reset();
-})
 
+    libraryForm.reset();
+});
+
+{/* <div class="card">
+<div class="title">
+    <p>The Three-Body Problem<p>
+</div>
+<div class="author">
+    <p>By: Liu Cixin (刘慈欣)</p>
+</div>
+<div class="pages">
+    <p>416 pages</p>
+</div>
+<div class="read_toggle">
+    <input type="checkbox" class="tgl tgl-flip" id="switch_yes_no" checked/>
+    <label for="switch_yes_no" class="tgl_btn" data-tg-on="Read ✔" data-tg-off="Reading..."></label>
+</div>
+<div class="delete_button">
+    <button type="button" id="delete_btn">✖</button>
+</div>
+</div>  */}
 
 
 
