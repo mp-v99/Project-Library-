@@ -6,7 +6,7 @@
     --secondary-color: #f9f9f9;
     --theme-color: #40c6ec;
     --complementary-color: #f38a84;
-    --text-font: Roboto;
+    --text-font: Roboto, Arial, Helvetica, sans-serif;
     --big-text-size: 1.1rem;
     --regular-text-size: 0.8rem;
     --small-text-size: 0.1rem;
