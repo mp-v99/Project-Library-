@@ -362,7 +362,7 @@ form>button:active {
 .read_toggle .tgl + .tgl_btn {
   outline: 0;
   display: block;
-  width: 4.5rem;
+  width: 5.5rem;
   height: 2rem;
   position: relative;
   cursor: pointer;
