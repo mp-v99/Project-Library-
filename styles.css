@@ -6,13 +6,24 @@
     --secondary-color: #f9f9f9;
     --theme-color: #40c6ec;
     --complementary-color: #f38a84;
-    --text-font: Arial, Helvetica, sans-serif;
+    --text-font: Roboto;
     --big-text-size: 1.1rem;
     --regular-text-size: 0.8rem;
     --small-text-size: 0.1rem;
 
     --dominant-shadow-color: #7b563b;
     --theme-shadow-color: #1f82a2;
+}
+
+/* @face rule for roboto font */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('font-family/woff_fonts/Roboto-Regular.woff2') format('woff2'),
+      url('font-family/woff_fonts/Roboto-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
 
 /* use a more-intuitive box-sizing model */
