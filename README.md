@@ -12,6 +12,8 @@ This not only simplifies the task of creating books but also leaves your code re
 
 This approach allows for smooth scalability whenever a new feature is added. The focus isn’t just on tracking values, but understanding the scope of each Book instance and maintaining strict logical flow.
 
+This allowed me to easily add the event listeners for delete button and toggle button. The scope of displayBook() function lets it know which isntance of the book it is working with and the use of findIndex() helps tackle the specific Book property. Allowing for a simple function that either deletes a book or toggles its read status between true and false:
+
 ![Project Screenshot](pics_folder/project-screenshot.png)
 
 I like to think of prototypal inheritance as an infinite set of motherboards with labels:
