@@ -121,9 +121,20 @@ html *::-webkit-scrollbar {
     color: var(--secondary-color);
 
     box-shadow: 0px 2px 2px 0px var(--theme-color);
+
+    gap: 1rem;
 }
 
+.header>.logo {
+  display: flex;
+}
 
+.logo>img {
+  flex: auto;
+
+  max-height: 120px;
+  width: auto;
+}
 /* The sidebar */
 
 
@@ -200,7 +211,8 @@ form>input {
     border: none;
 
     background-color: var(--secondary-color);
-    color: var(--dominant-color);
+    color: var(--dominant-shadow-color);
+    caret-color: var(--dominant-shadow-color);
 
     grid-column: 2 / 4;
 }
