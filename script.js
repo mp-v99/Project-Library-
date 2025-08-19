@@ -120,24 +120,36 @@ const displayBook = function(newBook) {
         const targetIndex = myLibrary.findIndex(item => item.id === newBook.id);
         myLibrary.splice(targetIndex, 1)
         libraryMainContent.removeChild(newBookDiv)
-        console.log(myLibrary)
+    })
+
+    labelToggle.addEventListener("click", () => {
+        const targetIndex = myLibrary.findIndex(item => item.id === newBook.id);
+
+        if (myLibrary[targetIndex].toggleRead == true) {
+            myLibrary[targetIndex].toggleRead = false;
+        }
+        else if (myLibrary[targetIndex].toggleRead == false) {
+            myLibrary[targetIndex].toggleRead = true;
+        }
+        
+        console.log(newBook.bookInfo());
     })
 
 }
 
 let createMultipleBooks = [
-    { title: "The Three-Body Problem", author: "Liu Cixin (刘慈欣)", pages: "416", read: false},
-    { title: "Harry Potter and the Prisoner of Azkaban", author: "J.K. Rowling", pages: "435", read: false},
-    { title: "The Fellowship of the Ring", author: "J.R.R. Tolkien", pages: "423", read: true},
-    { title: "The Name of the Wind", author: "Patrick Rothfuss", pages: "662", read: false},
+    { title: "The Name of the Wind", author: "Patrick Rothfuss", pages: "662", read: true},
     { title: "Mistborn: The Final Empire", author: "Brandon Sanderson", pages: "541", read: false},
     { title: "A Game of Thrones", author: "George R.R. Martin", pages: "694", read: true},
     { title: "Dune", author: "Frank Herbert", pages: "688", read: false},
     { title: "Neuromancer", author: "William Gibson", pages: "271", read: true},
     { title: "Foundation", author: "Isaac Asimov", pages: "255", read: false},
     { title: "Hyperion", author: "Dan Simmons", pages: "482", read: true},
-    { title: "Snow Crash", author: "Neal Stephenson", pages: "440", read: true }
-
+    { title: "Snow Crash", author: "Neal Stephenson", pages: "440", read: true},
+    { title: "Harry Potter and the Prisoner of Azkaban", author: "J.K. Rowling", pages: "435", read: true},
+    { title: "The Fellowship of the Ring", author: "J.R.R. Tolkien", pages: "423", read: false},
+    { title: "The Three-Body Problem", author: "Liu Cixin (刘慈欣)", pages: "416", read: false},
+    {title: "The Wild Robot", author: "Peter Brown", pages: "288", read: false}
 ]
 
 createMultipleBooks.forEach((book) => {
@@ -145,8 +157,6 @@ createMultipleBooks.forEach((book) => {
     displayBook(myLibrary[0])
 })
     
-console.log(myLibrary)
-
 // The one event needed to grab the input values 
 
 bookSubmitButton.addEventListener('click', (e) => {
